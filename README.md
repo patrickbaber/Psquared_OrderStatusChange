@@ -11,32 +11,32 @@ Example for a status change from pending to complete:
 
 Your config.xml could look like this:
 
-  <?xml version="1.0"?>
-  <config>
-    [...]
-    <global>
-      <events>
-        <sales_order_status_change>
-          <observers>
-            <your_module>
-              <type>singleton</type>
-              <class>Vendor_CustomExtension_Model_Observer</class>
-              <method>orderStatusChange</method>
-            </your_module>
-          </observers>
-        </sales_order_status_change>
-        <sales_order_status_change_pending_to_complete>
-          <observers>
-            <your_module>
-              <type>singleton</type>
-              <class>Vendor_CustomExtension_Model_Observer</class>
-              <method>orderStatusChangePendingToComplete</method>
-            </your_module>
-          </observers>
-        </sales_order_status_change_pending_to_complete>
-      </events>
-    </global>
-  </config>
+>  <?xml version="1.0"?>
+>  <config>
+>    [...]
+>    <global>
+>      <events>
+>        <sales_order_status_change>
+>          <observers>
+>            <your_module>
+>              <type>singleton</type>
+>              <class>Vendor_CustomExtension_Model_Observer</class>
+>              <method>orderStatusChange</method>
+>            </your_module>
+>          </observers>
+>        </sales_order_status_change>
+>        <sales_order_status_change_pending_to_complete>
+>          <observers>
+>            <your_module>
+>              <type>singleton</type>
+>              <class>Vendor_CustomExtension_Model_Observer</class>
+>              <method>orderStatusChangePendingToComplete</method>
+>            </your_module>
+>          </observers>
+>        </sales_order_status_change_pending_to_complete>
+>      </events>
+>    </global>
+>  </config>
 
 And a example observer class:
 
