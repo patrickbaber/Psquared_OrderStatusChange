@@ -10,36 +10,38 @@ Example for a status change from pending to complete:
   sales_order_status_change_pending_to_complete
 
 Your config.xml could look like this:
-
->  <?xml version="1.0"?>
->  <config>
->    [...]
->    <global>
->      <events>
->        <sales_order_status_change>
->          <observers>
->            <your_module>
->              <type>singleton</type>
->              <class>Vendor_CustomExtension_Model_Observer</class>
->              <method>orderStatusChange</method>
->            </your_module>
->          </observers>
->        </sales_order_status_change>
->        <sales_order_status_change_pending_to_complete>
->          <observers>
->            <your_module>
->              <type>singleton</type>
->              <class>Vendor_CustomExtension_Model_Observer</class>
->              <method>orderStatusChangePendingToComplete</method>
->            </your_module>
->          </observers>
->        </sales_order_status_change_pending_to_complete>
->      </events>
->    </global>
->  </config>
+```xml
+  <?xml version="1.0"?>
+  <config>
+    [...]
+    <global>
+      <events>
+        <sales_order_status_change>
+          <observers>
+            <your_module>
+              <type>singleton</type>
+              <class>Vendor_CustomExtension_Model_Observer</class>
+              <method>orderStatusChange</method>
+            </your_module>
+          </observers>
+        </sales_order_status_change>
+        <sales_order_status_change_pending_to_complete>
+          <observers>
+            <your_module>
+              <type>singleton</type>
+              <class>Vendor_CustomExtension_Model_Observer</class>
+              <method>orderStatusChangePendingToComplete</method>
+            </your_module>
+          </observers>
+        </sales_order_status_change_pending_to_complete>
+      </events>
+    </global>
+  </config>
+```
 
 And a example observer class:
 
+```php
   <?php
 
   class Vendor_CustomExtension_Model_Observer
@@ -51,5 +53,6 @@ And a example observer class:
   		$order = $observer->getOrder();
   	}
   }
+```
 
 This extension is based on this post (http://www.cartware.de/blog/detail/article/kein-magento-event-fuer-statusaenderung/) which describs event driven way to realise a status change event without any rewrites. So, no trouble with rewrite conflicts!
