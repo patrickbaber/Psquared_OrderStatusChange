@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Psquared_OrderStatusChange>
+            <version>0.1.0</version>
+        </Psquared_OrderStatusChange>
+    </modules>
+    <global>
+        <models>
+            <orderstatuschange>
+                <class>Psquared_OrderStatusChange_Model</class>
+            </orderstatuschange>
+        </models>
+        <events>
+            <sales_order_load_after>
+                <observers>
+                    <orderstatuschange>
+                        <type>singleton</type>
+                        <class>Psquared_OrderStatusChange_Model_Observer</class>
+                        <method>fetchOrderStatus</method>
+                    </orderstatuschange>
+                </observers>
+            </sales_order_load_after>
+            <sales_order_save_after>
+                <observers>
+                    <orderstatuschange>
+                        <type>singleton</type>
+                        <class>Psquared_OrderStatusChange_Model_Observer</class>
+                        <method>checkOrderStatus</method>
+                    </orderstatuschange>
+                </observers>
+            </sales_order_save_after>
+        </events>
+    </global>
+</config>
