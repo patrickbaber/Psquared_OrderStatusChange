@@ -9,7 +9,7 @@ Example for a status change from pending to complete:
   
   sales_order_status_change_pending_to_complete
 
-Your config.xml could look like this:
+Your config.xml could looks like this:
 ```xml
 <?xml version="1.0"?>
 <config>
