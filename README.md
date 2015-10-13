@@ -48,6 +48,10 @@ class Vendor_CustomExtension_Model_Observer
 {
 	public function orderStatusChange($observer) {
 		$order = $observer->getOrder();
+		Mage::log($observer->getOldOrderState());
+        Mage::log($observer->getNewOrderState());
+        Mage::log($observer->getOldOrderStatus());
+        Mage::log($observer->getNewOrderStatus());
 	}
 	public function orderStatusChangePendingToComplete($observer) {
 		$order = $observer->getOrder();
