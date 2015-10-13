@@ -32,9 +32,9 @@ class Psquared_OrderStatusChange_Model_Observer
 		}
 
 		// status change
-		$order = $observer->getOrder();
-		$newOrderState = $order->getState();
-		$newOrderStatus = $order->getStatus();
+		$order              = $observer->getOrder();
+		$newOrderState      = $order->getState();
+		$newOrderStatus     = $order->getStatus();
 
 		if ($oldOrderStatus != $newOrderStatus) {
 			// event data with order and statuses
